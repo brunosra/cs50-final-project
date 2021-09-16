@@ -5,7 +5,7 @@ class Config:
     FLASK_ENV = os.getenv("DEVELOPMENT")
     DEBUG = False
     DEVELOPMENT = False
-    SECRET_KEY = os.getenv("SECRET_KEY", "this-is-the-default-key")
+    SECRET_KEY = os.getenv("SECRET_KEY", "this-should-be-changed-to-a-real-key")
 
 class ProductionConfig(Config):
     pass
