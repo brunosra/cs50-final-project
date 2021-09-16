@@ -1,0 +1,2 @@
+FLASK_APP=cocciep
+FLASK_ENV=development
