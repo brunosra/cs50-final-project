@@ -11,10 +11,12 @@ Authors: albertoturrion and brunosra
 Mac: `python3 -m venv venv`
 Windows: `py -3 -m venv venv`
 
-##### Activate Virtual Environment:
+#### Activate Virtual Environment:
 Mac: `. venv/bin/activate`
 Windows: `venv\Scripts\activate`
 
-Install dependencies:
+#### Install dependencies:
 `pip install -r requirements.txt`
 
+#### Run Project:
+`flask run`
