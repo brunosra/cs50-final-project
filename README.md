@@ -18,5 +18,7 @@ Windows: `venv\Scripts\activate`
 #### Install dependencies:
 `pip install -r requirements.txt`
 
+#### Prepare variables:
+`export FLASK_APP=blog FLASK_ENV=development`
 #### Run Project:
 `flask run`
