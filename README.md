@@ -6,7 +6,6 @@ Authors: albertoturrion and brunosra
 ### Instructions
 #### Clone project:
 `git clone https://github.com/brunosra/cs50-final-project.git`
-
 #### Create Virtual Environment:
 Mac: `python3 -m venv venv`
 Windows: `py -3 -m venv venv`
@@ -30,3 +29,9 @@ Windows: `venv\Scripts\activate`
 `flask db upgrade`
 #### Run Project:
 `flask run`
+
+### Instructions for Developmnent
+#### Create database migration:
+`flask db migrate -m "Migrate message detail"`
+#### Create upgrade migration into database:
+`flask db upgrade`
