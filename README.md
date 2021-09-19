@@ -19,6 +19,10 @@ Windows: `venv\Scripts\activate`
 `pip install -r requirements.txt`
 
 #### Prepare variables:
-`export FLASK_APP=blog FLASK_ENV=development`
+`export FLASK_APP=cocciep FLASK_ENV=development`
+#### Create DB:
+`flask db init`
+#### Run Latest Migration:
+`flask db upgrade`
 #### Run Project:
 `flask run`
