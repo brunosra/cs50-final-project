@@ -1,39 +1,28 @@
 import os
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
+from cocciep.db import db
+
+from cocciep.models.user import User
 
 def create_app(test_config=None):
-
   app = Flask(__name__, instance_relative_config=True)
   app.config.from_mapping(
     SECRET_KEY='dev',
-    DATABASE=os.path.join(app.instance_path, 'blog.sqlite')
+    DATABASE=os.path.join(app.instance_path, 'cocciep.sqlite'),
+    SQLALCHEMY_DATABASE_URI='sqlite:///cocciep.sqlite'
   )
 
-  if test_config is None:
-    app.config.from_pyfile('config.py', silent=True)
-  else:
-    app.config.from_mapping(test_config)
-  
-  try:
-    os.makedirs(app.instance_path)
-  except OSError:
-    pass
-
-  @app.route('/hello')
-  def hello():
-    return 'Hello World!'
-  
-  from . import db
   db.init_app(app)
+  Migrate(app, db)
 
-
-  from . import auth
-  app.register_blueprint(auth.bp)
+  # importing models:
+  from cocciep.models.user import User
   
-  # from . import blog
-  # app.register_blueprint(blog.bp)
-  # app.add_url_rule('/', endpoint='index')
+  # importing blueprints
+  from cocciep.blueprints.auth import bp
+  app.register_blueprint(bp)
 
-  return app;
-
-  
+  return app
