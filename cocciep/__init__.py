@@ -19,10 +19,12 @@ def create_app(test_config=None):
   Migrate(app, db)
 
   # importing models:
+  from cocciep.models.subjects import Subject
   from cocciep.models.user import User
   
   # importing blueprints
   from cocciep.blueprints.auth import bp
+  from cocciep.blueprints.subjects import bp
   app.register_blueprint(bp)
 
   return app
