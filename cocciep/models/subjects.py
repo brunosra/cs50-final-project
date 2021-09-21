@@ -1,5 +1,6 @@
 from cocciep.db import db
 from datetime import datetime
+
 class Subject(db.Model):
   __tablename__ = 'subjects'
   id = db.Column(db.Integer, primary_key=True)
