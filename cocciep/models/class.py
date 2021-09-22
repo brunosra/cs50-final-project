@@ -3,7 +3,7 @@ from datetime import datetime
 
 class Class(db.Model):
   __tablename__ = 'classes'
-  id = db.Column(db.Integer, primary_key=True)
+  id = db.Column(db.Integer(), primary_key=True)
   name = db.Column(db.String(128), unique=True)
   school_year_id = db.Column(db.Integer(), db.ForeignKey('schoolyears.id'), nullable=False) # create relationship
   status_class_id = db.Column(db.Integer(), db.ForeignKey('statusclasses.id'), nullable=False) # create relationship
