@@ -2,7 +2,7 @@ from cocciep.db import db
 from datetime import datetime
 
 class Student(db.Model):
-  __tablename__ = 'students'
+  __tablename__ = 'student'
   id = db.Column(db.Integer(), primary_key=True)
   name = db.Column(db.String(128), nullable=False)
   gender = db.Column(db.String(1)) #M, F, O

@@ -2,10 +2,10 @@ from cocciep.db import db
 from datetime import datetime
 
 class User(db.Model):
-  __tablename__ = 'users'
+  __tablename__ = 'user'
   id = db.Column(db.Integer(), primary_key=True)
   name = db.Column(db.String(128), nullable=False)
-  gender = db.Column(db.String(1)) #M, F, O
+  gender_id = db.Column(db.Integer(), db.ForeignKey('genders.id'), nullable=False) #M, F, O
   gender_other = db.Column(db.String(128))
   birthdate = db.Column(db.Date(), nullable=False)
   mobile = db.Column(db.String(15), nullable=False)

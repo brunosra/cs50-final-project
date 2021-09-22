@@ -2,7 +2,7 @@ from cocciep.db import db
 from datetime import datetime
 
 class Gender(db.Model):
-  __tablename__ = 'genders'
+  __tablename__ = 'gender'
   id = db.Column(db.Integer(), primary_key=True)
   name = db.Column(db.String(128), nullable=False)
   created_at = db.Column(db.DateTime(), nullable=False, default=datetime.now())
