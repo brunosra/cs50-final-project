@@ -9,5 +9,6 @@ class StudentsClass(db.Model):
   status_class_id = db.Column(db.Integer(), db.ForeignKey('statusclass.id'), nullable=False) # create relationship
   created_at = db.Column(db.DateTime(), nullable=False, default=datetime.now())
   deleted_at = db.Column(db.DateTime(), nullable=True)
+  students = db.relationship('Students', backref='students_class', lazy=True)
 
 # how to create seed automatically  
