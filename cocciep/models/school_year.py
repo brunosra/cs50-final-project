@@ -11,4 +11,3 @@ class SchoolYear(db.Model):
   created_at = db.Column(db.DateTime(), nullable=False, default=datetime.now())
   deleted_at = db.Column(db.DateTime(), nullable=True)
   students_classes = db.relationship('StudentsClass', backref='schoolyear', lazy=True)
-
