@@ -6,7 +6,7 @@ class User(db.Model):
   id = db.Column(db.Integer(), primary_key=True)
   name = db.Column(db.String(128), nullable=False)
   gender_id = db.Column(db.Integer(), db.ForeignKey('gender.id'), nullable=False) #M, F, O
-  gender_other = db.Column(db.String(128))
+  gender_other = db.Column(db.String(128), nullable=True)
   birthdate = db.Column(db.Date(), nullable=False)
   mobile = db.Column(db.String(15), nullable=False)
   mobile2 = db.Column(db.String(15))
