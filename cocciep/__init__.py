@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 
 from cocciep.db import db
 
-from cocciep.models.user import User
+from cocciep.models.teacher import Teacher
 
 def create_app(test_config=None):
   app = Flask(__name__, instance_relative_config=True)
@@ -19,10 +19,12 @@ def create_app(test_config=None):
   Migrate(app, db)
 
   # importing models:
-  from cocciep.models.user import User
+  from cocciep.models.subjects import Subject
+  from cocciep.models.teacher import Teacher
   
   # importing blueprints
   from cocciep.blueprints.auth import bp
+  from cocciep.blueprints.subjects import bp
   app.register_blueprint(bp)
 
   return app
