@@ -9,10 +9,10 @@ class EnumStatusClass(db.Model):
   deleted_at = db.Column(db.DateTime(), nullable=True)
  
   
-class EnumStatusClass(enum.Enum):
-  ACTIVE = "active",
-  FINISHED = "finished",
-  CANCELLED = "cancelled"
+# class EnumStatusClass(enum.Enum):
+#   ACTIVE = "active",
+#   FINISHED = "finished",
+#   CANCELLED = "cancelled"
   
 """
 Seed the enum type:
