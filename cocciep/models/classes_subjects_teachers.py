@@ -1,8 +1,8 @@
 from cocciep.db import db
 
-ClassesSubjectsTeachers = db.Table('ClassesSubjectsTeachers',
-    db.Column('Class_id', db.Integer(), db.ForeignKey('Class.id'), primary_key=True),
-    db.Column('Subject_id', db.Integer(), db.ForeignKey('Subject.id'), primary_key=True),
-    db.Column('Teacher_id', db.Integer(), db.ForeignKey('Teacher.id'), primary_key=True),
-)
-
+class ClassesSubjectsTeachers(db.Model):
+    __tablename__ = 'classes_subjects_teachers'
+    id = db.Column(db.Integer(), primary_key=True)
+    student_class_id = db.Column(db.Integer(), db.ForeignKey('StudentsClass.id'), nullable=False)
+    subject_id = db.Column(db.Integer(), db.ForeignKey('Subject.id'), nullable=False)
+    teacher_id = db.Column(db.Integer(), db.ForeignKey('Teacher.id'), nullable=False)
