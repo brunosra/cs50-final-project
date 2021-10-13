@@ -12,5 +12,7 @@ class StudentsClass(db.Model):
   status_class_id = db.Column(db.Enum(EnumStatusClass))
   created_at = db.Column(db.DateTime(), nullable=False, default=datetime.now())
   deleted_at = db.Column(db.DateTime(), nullable=True)
+  students_classes_students = db.relationship('StudentsClassStudents', backref='studentsclass', lazy=True)
+  student_class = db.relationship('studentsclassteachers', backref='studentsclass', lazy=True)
 
 # how to create seed automatically  

@@ -17,3 +17,4 @@ class Teacher(db.Model):
   teacher_level = db.Column(db.Integer(), nullable=False, default=1) #1 = teacher | 0=admin
   created_at = db.Column(db.DateTime(), nullable=False, default=datetime.now())
   deleted_at = db.Column(db.DateTime(), nullable=True)
+  classes_subjects_teachers = db.relationship('classessubjectsteachers', backref='teacher', lazy=True)
