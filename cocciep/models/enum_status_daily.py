@@ -11,4 +11,4 @@ class EnumStatusClass(db.Model):
 """
 Seed the enum type:
 given, not_given
-"""
+""" 

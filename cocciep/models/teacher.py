@@ -1,11 +1,12 @@
 from cocciep.db import db
 from datetime import datetime
+from cocciep.models.enum_gender import EnumGender
 
 class Teacher(db.Model):
-  __tablename__ = 'user'
+  __tablename__ = 'teacher'
   id = db.Column(db.Integer(), primary_key=True)
   name = db.Column(db.String(128), nullable=False)
-  gender_id = db.Column(db.Integer(), db.ForeignKey('gender.id'), nullable=False) #M, F, O
+  gender_id = db.Column(db.Enum(EnumGender))
   gender_other = db.Column(db.String(128), nullable=True)
   birthdate = db.Column(db.Date(), nullable=False)
   mobile = db.Column(db.String(15), nullable=False)
