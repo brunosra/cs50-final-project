@@ -2,12 +2,12 @@ from cocciep.db import db
 from datetime import datetime
 import enum
 class EnumBimester(enum.Enum):
-  1 = 1,
-  2 = 2,
-  3 = 3,
-  4 = 4,
-  5 = 5,
-  6 = 6
+  first = 1,
+  second = 2,
+  third = 3,
+  fourth = 4,
+  final = 5,
+  recuperation = 6
 
 """
 Seed the enum type:

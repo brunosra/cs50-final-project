@@ -17,4 +17,5 @@ class Student(db.Model):
   created_at = db.Column(db.DateTime(), nullable=False, default=datetime.now())
   deleted_at = db.Column(db.DateTime(), nullable=True)
   student_class = db.relationship('StudentsClassStudents', backref='student', lazy=True)
-  bimestral_grades = db.relationship('BimestralGradesStudents', backref='student', lazy=True)
+  grades = db.relationship('Grades', backref='student', lazy=True)
+  presence = db.relationship('Presence', backref='student', lazy=True)

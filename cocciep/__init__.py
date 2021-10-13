@@ -9,23 +9,19 @@ from cocciep.models.teacher import Teacher
 
 # Models
 from cocciep.models.teacher import Teacher
-from cocciep.models.subject import Subject
 from cocciep.models.students_class import StudentsClass
 from cocciep.models.students_class_students import StudentsClassStudents
 from cocciep.models.student import Student
 from cocciep.models.school_year import SchoolYear
-from cocciep.models.recuperation_grade_students import RecuperationGradeStudents
-from cocciep.models.presences import Presence
-from cocciep.models.final_test_grade_students import FinalTestGradeStudents
-from cocciep.models.presences import Presence
+from cocciep.models.presence import Presence
+from cocciep.models.grades import Grades
 from cocciep.models.enum_subjects import EnumSubjects
-from cocciep.models.enum_status_daily import EnumStatusDaily
 from cocciep.models.enum_status_class import EnumStatusClass
 from cocciep.models.enum_gender import EnumGender
 from cocciep.models.enum_bimester import EnumBimester
-from cocciep.models.daily import Daily
-# from cocciep.models.classes_subjects_teachers import ClassesSubjectsTeachers
-from cocciep.models.bimestral_grades_students import BimestralGradesStudents
+
+from cocciep.models.students_class_teachers import StudentsClassTeachers
+
 
 def create_app(test_config=None):
   app = Flask(__name__, instance_relative_config=True)
@@ -39,12 +35,10 @@ def create_app(test_config=None):
   Migrate(app, db)
 
   # importing models:
-  from cocciep.models.subjects import Subject
-  from cocciep.models.teacher import Teacher
   
   # importing blueprints
   from cocciep.blueprints.auth import bp
-  from cocciep.blueprints.subjects import bp
+  # from cocciep.blueprints.subjects import bp
   app.register_blueprint(bp)
 
   return app
